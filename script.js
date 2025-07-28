@@ -38,18 +38,22 @@ class Body {
 }
 
 let bodies = [];
-let numOfBodies = 5;
 
 
 function setup() {
   createCanvas(500,500);
+  resetBodies();
+  
+}
+function resetBodies() {
+  bodies = [];
+  let numOfBodies = parseInt(document.querySelector("input").value) || 5;
   for (let i = 0; i < numOfBodies; i++){
-    let x = random(width);
-    let y = random(height);
+    let x = random(width-100);
+    let y = random(height-100);
     let mass = random(10,100);
     bodies[i] = new Body(x, y, mass);
   }
-  
 }
 
 function draw() {
