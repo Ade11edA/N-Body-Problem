@@ -38,9 +38,10 @@ class Body {
 }
 
 let bodies = [];
-
+const screenWidth = window.innerWidth;
+const screenHeight = window.innerHeight;
 function setup() {
-  createCanvas(500,500);
+  createCanvas(screenWidth,screenHeight);
   resetBodies();
   
 }
@@ -48,8 +49,8 @@ function resetBodies() {
   bodies = [];
   let numOfBodies = parseInt(document.querySelector("input").value) || 5;
   for (let i = 0; i < numOfBodies; i++){
-    let x = random(width-100);
-    let y = random(height-100);
+    let x = random(100, width-100);
+    let y = random(100, height-100);
     let mass = random(10,100);
     bodies[i] = new Body(x, y, mass);
   }
