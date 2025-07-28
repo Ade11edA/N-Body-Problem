@@ -57,7 +57,7 @@ function resetBodies() {
 }
 
 function draw() {
-  background(0, 10);
+  background(0);
   for (let i = 0; i < bodies.length; i++){
     for(let j = 0; j < bodies.length; j++){
       if( i!= j){
